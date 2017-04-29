@@ -14,9 +14,6 @@
 # - https://bitbucket.org/alfonse/gltut/src/28636298c1c0/glm-0.9.0.7/FindGLM.cmake
 #
 
-# Additional modules
-include(FindPackageHandleStandardArgs)
-
 if (WIN32)
  # Find include files
   find_path(
@@ -40,13 +37,7 @@ else()
    DOC "The directory where glm/glm.hpp resides")
 endif()
 
-# Handle REQUIRD argument, define *_FOUND variable
+include(FindPackageHandleStandardArgs)
+
 find_package_handle_standard_args(GLM DEFAULT_MSG GLM_INCLUDE_DIR)
 
-# Define GLM_INCLUDE_DIRS
-if (GLM_FOUND)
-  set(GLM_INCLUDE_DIRS ${GLM_INCLUDE_DIR})
-endif()
-
-# Hide some variables
-mark_as_advanced(GLM_INCLUDE_DIR)
