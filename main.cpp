@@ -18,8 +18,8 @@ extern "C" {
 
 }
 
-#define SCREEN_SIZE_X 1280
-#define SCREEN_SIZE_Y 720
+#define SCREEN_SIZE_X 800
+#define SCREEN_SIZE_Y 600
 #define MOVE_SPEED 0.02
 
 uint8_t* screen = new uint8_t[SCREEN_SIZE_X * 3 * SCREEN_SIZE_Y];
@@ -40,7 +40,7 @@ glm::mat4 MVP = projmat*viewmat*modelmat;
 double zoomfactor = 1.0f;
 double centerx = 0.0f;
 double centery = 0.0f;
-int iterations = 28;
+int iterations = 80;
 
 bool InsideMandelbrot(const std::complex<double>& Z)
 {
